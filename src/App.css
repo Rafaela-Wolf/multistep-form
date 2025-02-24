@@ -63,7 +63,7 @@ textarea {
 }
 
 .actions button {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     padding: 0.5rem 1rem;
     gap: 0.5rem;
     display: flex;
@@ -77,4 +77,20 @@ textarea {
 
 .actions button:hover {
     background-color: #cfcfcf;
+}
+
+/* Responsive */
+
+@media(max-width: 425px) {
+    .header h2 {
+        font-size: 1.2rem;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+    }
+
+    .form-container {
+        width: 94%;
+    }
 }

@@ -11,10 +11,12 @@
 
 .steps::after {
     content: "";
-    width: 380px;
+    width: 100%;
     border-bottom: 1px solid #ccc;
     position: absolute;
-    top: 20px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
 }
 
 .step {
@@ -36,4 +38,20 @@
 
 .active>svg {
     fill: #7076f4;
+}
+
+
+/* Responsive */
+@media(max-width: 425px) {
+    .steps{
+        gap: 2rem;
+    }
+
+    .step svg {
+        font-size: 1.2rem;
+    }
+
+    .step p {
+        font-size: 12px;
+    }
 }

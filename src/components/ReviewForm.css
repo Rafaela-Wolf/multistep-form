@@ -36,3 +36,13 @@
     font-size: 0.7rem;
     margin-top: 0.4rem;
 }
+
+@media(max-width: 425px) {
+    .form-control.score-container {
+        gap: 1.2rem;
+    }
+
+    .score-container svg {
+        font-size: 1.2rem;
+    }
+}
