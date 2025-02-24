@@ -1,7 +1,14 @@
 import { BsFillEmojiFrownFill, BsFillEmojiHeartEyesFill, BsFillEmojiNeutralFill, BsFillEmojiSmileFill } from "react-icons/bs";
 import './Thanks.css';
 
-const Thanks = () => {
+const emojiData = {
+  unsatisfied: <BsFillEmojiFrownFill />,
+  neutral: <BsFillEmojiNeutralFill />,
+  satisfied: <BsFillEmojiSmileFill />,
+  very_satisfied: <BsFillEmojiHeartEyesFill />,
+};
+
+const Thanks = ({ data }) => {
   return (
     <div className="thanks-container">
       <h2>Falta pouco...</h2>

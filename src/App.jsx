@@ -13,10 +13,31 @@ import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 
 // Hooks
 import { useForm } from './hooks/useForm';
+import { useState } from 'react';
+
+const formTemplate = {
+  name: "",
+  email: "",
+  review: "",
+  comment: ""
+}
 
 function App() {
 
-  const formComponents = [<UserForm />, <ReviewForm />, <Thanks />];
+  const [data, setData] = useState(formTemplate);
+
+  const updateFieldHandler = (key, value) => {
+    setData((prev) => {
+      return { ...prev, [key]: value };
+    });
+  };
+
+  const formComponents = [
+    <UserForm key="user-form" data={data} updateFieldHandler={updateFieldHandler} />, 
+    <ReviewForm key="review-form" data={data} updateFieldHandler={updateFieldHandler} />, 
+    <Thanks key="thanks" data={data} updateFieldHandler={updateFieldHandler} />
+  ];
+
   const { currentStep, currentComponent, changeStep, isLastStep, isFirstStep } = useForm(formComponents);
 
   return (
@@ -56,4 +77,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
